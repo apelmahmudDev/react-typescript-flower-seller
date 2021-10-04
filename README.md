@@ -9,3 +9,9 @@
 
 - ReactJs
 - Typescript
+
+**You can run this app in the local**
+
+- clone the repository
+- npm install
+- npm start
