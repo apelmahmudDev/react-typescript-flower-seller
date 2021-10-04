@@ -56,6 +56,10 @@ const Flowers = () => {
 			</div>
 			<div>
 				<h2 className={styles.title}>🏵 ফুলের তাক 🏵</h2>
+				{/* message */}
+				{flowerLists.length < 1 && (
+					<h2 className={styles.message}>তোমার ফুলের তাকে কোনো ফুল নেই !!</h2>
+				)}
 				{flowerLists.map((flower) => (
 					<Flower
 						key={flower.price}
