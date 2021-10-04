@@ -27,6 +27,14 @@ const Flowers = () => {
 		setFlowerLists([...flowerLists, flowers]);
 	};
 
+	// flower buy handler
+	const buyFlower = (flowerName: string) => {
+		const newFlowerLists = flowerLists.filter(
+			(flower) => flower.flower !== flowerName
+		);
+		setFlowerLists(newFlowerLists);
+	};
+
 	return (
 		<div>
 			<div>
@@ -56,16 +64,19 @@ const Flowers = () => {
 			</div>
 			<div>
 				<h2 className={styles.title}>🏵 ফুলের তাক 🏵</h2>
+
 				{/* message */}
 				{flowerLists.length < 1 && (
 					<h2 className={styles.message}>তোমার ফুলের তাকে কোনো ফুল নেই !!</h2>
 				)}
+
 				{flowerLists.map((flower) => (
 					<Flower
 						key={flower.price}
 						name={flower.name}
 						flower={flower.flower}
 						price={flower.price}
+						buyFlower={buyFlower}
 					/>
 				))}
 			</div>

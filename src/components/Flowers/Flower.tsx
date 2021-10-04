@@ -5,9 +5,10 @@ interface IFlowerShelf {
 	name: string;
 	flower: string;
 	price: number;
+	buyFlower: (flower: string) => void;
 }
 
-const Flower = ({ name, flower, price }: IFlowerShelf) => {
+const Flower = ({ name, flower, price, buyFlower }: IFlowerShelf) => {
 	return (
 		<div className={styles.flower_container}>
 			<div className={styles.flower_wrap}>
@@ -23,7 +24,7 @@ const Flower = ({ name, flower, price }: IFlowerShelf) => {
 					<strong>ফুল দাম : </strong>
 					{price}
 				</p>
-				<button>ফুল ক্রয়</button>
+				<button onClick={() => buyFlower(flower)}>ফুল ক্রয়</button>
 			</div>
 		</div>
 	);
